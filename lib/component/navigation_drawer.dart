@@ -16,12 +16,21 @@ class NavigationDrawer extends StatefulWidget {
 
 class _NavigationDrawerState extends State<NavigationDrawer> {
   Future<void> share() async {
-    await FlutterShare.share(
-      title: 'Learn SQL',
-      text:
-          """Looking to learn SQL from scratch? Look no further than the "Learn SQL" app! Our comprehensive curriculum covers everything from beginner to advanced level, making it suitable for users of all skill levels. Boost your skills with our wide range of interview questions, complex queries, and multiple choice questions. And with our practice test feature, you'll be better prepared than ever for your next interview or exam. Download "Learn SQL" now and start mastering SQL today!""",
-      linkUrl: 'http://diet.vc/a_asql',
-    );
+    if (Platform.isAndroid) {
+      await FlutterShare.share(
+        title: 'Learn SQL',
+        text:
+            """Looking to learn SQL from scratch? Look no further than the "Learn SQL" app! Our comprehensive curriculum covers everything from beginner to advanced level, making it suitable for users of all skill levels. Boost your skills with our wide range of interview questions, complex queries, and multiple choice questions. And with our practice test feature, you'll be better prepared than ever for your next interview or exam. Download "Learn SQL" now and start mastering SQL today!""",
+        linkUrl: 'http://diet.vc/a_asql',
+      );
+    } else if (Platform.isIOS) {
+      await FlutterShare.share(
+        title: 'Learn SQL',
+        text:
+            """Looking to learn SQL from scratch? Look no further than the "Learn SQL" app! Our comprehensive curriculum covers everything from beginner to advanced level, making it suitable for users of all skill levels. Boost your skills with our wide range of interview questions, complex queries, and multiple choice questions. And with our practice test feature, you'll be better prepared than ever for your next interview or exam. Download "Learn SQL" now and start mastering SQL today!""",
+        linkUrl: 'link for ios HERE',
+      );
+    }
   }
 
   @override
