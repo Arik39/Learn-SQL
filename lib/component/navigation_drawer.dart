@@ -1,3 +1,5 @@
+import 'dart:io' show Platform;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_share/flutter_share.dart';
 import 'package:learnsql/Screens/Aboutus/about_us.dart';
@@ -49,7 +51,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             ),
             GestureDetector(
               onTap: () {
-                launch('tel:98798 79861');
+                launchUrl(Uri.parse('tel:9879879861'));
               },
               child: ListTile(
                 //leading: Icon(Icons.call_rounded),
@@ -84,8 +86,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             ),
             GestureDetector(
               onTap: () {
-                launch(
-                    'mailto:firoz.sherasiya@darshan.ac.in?subject=Query regarding Learn SQL application &body=your question here');
+                launchUrl(Uri.parse(
+                    'mailto:firoz.sherasiya@darshan.ac.in?subject=Query regarding Learn SQL application &body=your question here'));
+                // launch(
+                //     'mailto:firoz.sherasiya@darshan.ac.in?subject=Query regarding Learn SQL application &body=your question here');
               },
               child: ListTile(
                 //leading: Icon(Icons.person),
@@ -150,8 +154,14 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 ),
               ),
               onTap: () {
-                launch(
-                    'https://play.google.com/store/apps/details?id=com.aswdc_dbms&hl=en&gl=US');
+                if (Platform.isIOS) {
+                  print("Enter URL here");
+                  //your link below
+                  //launchUrl(Uri.parse(''));
+                } else if (Platform.isAndroid) {
+                  launch(
+                      'https://play.google.com/store/apps/details?id=com.aswdc_dbms&hl=en&gl=US');
+                }
               },
             ),
             ListTile(
@@ -169,8 +179,14 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 ),
               ),
               onTap: () {
-                launch(
-                    'https://play.google.com/store/apps/details?id=com.aswdc_dbms&hl=en&gl=US');
+                if (Platform.isIOS) {
+                  print("Enter URL here");
+                  //your link below
+                  //launchUrl(Uri.parse(''));
+                } else if (Platform.isAndroid) {
+                  launch(
+                      'https://play.google.com/store/apps/details?id=com.aswdc_dbms&hl=en&gl=US');
+                }
               },
             ),
             ListTile(

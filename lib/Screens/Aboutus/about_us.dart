@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:learnsql/utills/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -123,30 +122,30 @@ class AboutUs extends StatelessWidget {
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                Expanded(
-                                  flex: 5,
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Arik Kantesaria (190540107099)  ",
-                                        style: TextStyle(
-                                            fontSize: 12,
-                                            color: Colors.blueGrey,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                      Container(
-                                        child: GestureDetector(
-                                          onTap: () {
-                                            launch(
-                                                "https://in.linkedin.com/in/arik-kantesaria");
-                                          },
+                                GestureDetector(
+                                  onTap: () {
+                                    launch(
+                                        'https://in.linkedin.com/in/arik-kantesaria');
+                                  },
+                                  child: Expanded(
+                                    flex: 5,
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Arik Kantesaria (190540107099)  ",
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              color: Colors.blueGrey,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        Container(
                                           child: Image.asset(
                                             "assets/icon/linkedin.png",
                                             scale: 25,
                                           ),
-                                        ),
-                                      )
-                                    ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -378,7 +377,8 @@ class AboutUs extends StatelessWidget {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    launch('mailto:aswdc@darshan.ac.in');
+                                    launchUrl(Uri.parse(
+                                        'mailto:aswdc@darshan.ac.in'));
                                   },
                                   child: const Text(
                                     "aswdc@darshan.ac.in",
@@ -402,7 +402,7 @@ class AboutUs extends StatelessWidget {
                                 ),
                                 GestureDetector(
                                   onTap: () {
-                                    launch('tel:97277 47317');
+                                    launchUrl(Uri.parse('tel:9727747317'));
                                   },
                                   child: const Text(
                                     "+91 97277 47317",
